@@ -1,0 +1,596 @@
+*{
+    
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+/*    تعريف متغير */
+    --maincolor:hsl(186deg 80% 46%);
+    scroll-behavior: smooth;
+}
+a{
+    text-decoration: none;
+}
+.list a:focus{
+    color: hsl(186deg 80% 46%) ;
+   
+    text-decoration: none;
+    transition: 4s;
+}
+.top-btn{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px;
+    background-color: var(--maincolor);
+    color: white;
+    cursor: default;
+    display: none;
+    border-radius: 100%;
+   transition: 20s;
+}
+.color{
+   width:20%;
+     transition: 20s;
+    display: none;
+}
+.color span{
+   
+    position: fixed;
+    bottom: 200px;
+    right: 30px;
+    width: 40px;
+    padding: 10px;
+     color: black;
+     border-radius: 100%;
+    text-align: center;
+    
+   
+}
+#deep{
+    background-color:lawngreen;
+    margin-bottom: 90px;
+}
+#pi{
+    background-color: purple;
+    margin-bottom: 45px;
+}
+#blue{
+    background-color:hsl(186deg 80% 46%) ;
+}
+.contains{
+    
+   
+    width: 80%;
+    margin: auto;
+    
+   
+}
+header{
+    
+    width: 100%;
+    background-color: transparent;
+    position: fixed;
+     z-index: 5555;
+     border-bottom: 1px solid #ddd; 
+     padding-top: 20px;
+    padding-bottom: 20px;
+}
+header .contains{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+}
+header .contains .logo {
+    font-size: 30px;
+    color: black;
+}
+header .contains .logo span{
+     font-size: 30px;
+    color:var(--maincolor);
+}
+header .contains .list ul{
+    list-style: none;
+    
+}
+header .fa-list-ul{
+    display: none;
+}
+header .contains .list ul li{
+    float: left;
+    margin-left:30px;
+    font-size: 20px;
+   
+  
+}
+header .contains .list ul li a:hover{
+    color:var(--maincolor);
+}
+li a{
+    color: black;
+}
+
+/*end header*/
+.cover{
+   background-image: url(image/ll.jpg);
+    background-size: cover;
+    background-position:center;
+    width: 100%;
+    height: 100vh;
+    
+    
+}
+.cover .contains{
+    position: relative;
+    top: 40%;
+    left: 0;
+}
+.cover .info{
+    
+    position: absolute;
+    
+    
+}
+.cover .info .name{
+    font-size: 50px;
+    color:black;
+    font-weight: bold;
+    font-family: 'Roboto Slab', serif;
+}
+.cover .info .w {
+    font-size: 30px;
+    color: black;
+    border-bottom: 1px solid #ddd;
+    padding: 30px 0;
+    
+}
+.cover .info ul {
+    list-style: none;
+}
+.cover .info ul li {
+    float: left;
+    margin-left:40px;
+    
+}
+.cover .info ul li i{
+    color:black;
+    margin-top: 10px;
+    font-size: 20px;
+   
+}
+.cover .info ul .u {
+     margin-left:unset;
+}
+/*end cover*/
+.section{
+    margin-top: 100px;
+}
+.section .contains{
+    display: flex;
+    justify-content: space-between;
+}
+.section .contains .title{
+    width: 20%;
+}
+.section .contains .title p:first-child{
+    font-size: 30px;
+     color: black;
+    font-weight: bold;
+    margin-bottom: 10px;
+   
+}
+.section .contains .title p:last-child{
+    width: 100%;
+   padding-right: 70px; 
+    
+}
+.exper .contains .title p:last-child{
+    padding-right: 90px;
+}
+/*
+.section .contains .title p:last-child{
+   font-family: 'Nixie One', cursive;
+     
+}
+*/
+.section .contains .title p{
+    margin-right: 90px;
+    direction: rtl;
+    font-weight: bold;
+    margin-top: 20px;
+}
+.section .contains .det{
+    width: 80%;
+}
+/*start intro*/
+.intro{
+    width: 100%;
+    background-color: white;
+    margin-top: 80px;
+}
+.intro .det .s {
+    
+    font-family: 'Nixie One', cursive;
+}
+.intro .contains .sks{
+   
+    margin-top: 30px;
+}
+.intro .contains .sks .sk p:first-child span:last-child{
+    float: right;
+    
+}
+.intro .contains .sks .sk p:first-child{
+     font-weight: bold;
+}
+.sks .sk .col{
+    width: 100%;
+    height: 6px;
+    border-radius: 10px;
+   
+}
+.intro  .sks .sk #html{
+    background-image:linear-gradient(to right , var( --maincolor) 80%,#ddd 20%);
+} 
+.intro  .sks .sk #css{
+    background-image:linear-gradient(to right , var( --maincolor) 70%,#ddd 30%);
+} 
+.intro .sks .sk #java{
+    background-image:linear-gradient(to right , var( --maincolor) 60%,#ddd 40%);
+} 
+.det .sks .sk{
+    margin-bottom: 20px;
+}
+.det .sks .sk p{
+    margin-bottom: 10px;
+}
+/*end intro*/
+.exper{
+    width: 100%;
+    background-color: #ddd;
+    padding: 20px 20px;
+}
+.exper .contains .det{
+  
+     display: grid;
+     grid-gap: 30px;
+    grid-template-columns: repeat(12,1fr);
+}
+.exper .contains .det .tool{
+    grid-column: span 4;
+    color: black;
+    background-color: white;
+    padding: 20px 20px;
+   
+}
+.exper .contains .det .tool .p{
+    font-size: 30px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.exper .contains .det .tool .d {
+    font-family: 'Nixie One', cursive;
+   
+}
+.exper .contains .det .tool i{
+   color:var(--maincolor);
+   
+    font-size: 25px;
+}
+/*end exper*/
+.works .det{
+    margin: auto;
+}
+.works .det .big{
+    width: 100%;
+    height:350px;
+    margin-bottom: 10px;
+}
+
+.works .det img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.works .det .p {
+    width: 100%;
+    height:200px;
+    display: flex;
+    justify-content: space-between;
+}
+.works .det .p div{
+     padding-right: 10px;
+
+}
+/*end works*/
+.contact{
+    background-color: #ddd;
+}
+.contact .contains .det{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 20px;
+    padding-bottom: 80px;
+}
+.contact .contains .det p:first-child{
+    
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-weight: bolder;
+}
+.contact .contains .det .o {
+    color: black;
+    background-color: white;
+    padding: 20px ;
+    width: 250px;
+    text-align: center;
+    height: 150px;
+}
+/*end contact*/
+footer{
+    width: 100%;
+     background-color: deeppink;
+     text-align: center;
+}
+footer .contains {
+    display: flex;
+    justify-content: space-between;
+/*    margin-top: 30px;*/
+    height: 76px;
+   text-align: center;
+    padding: 30px;
+}
+footer .contains .title{
+    font-size: 34px;
+    font-weight: bold;
+     text-align: center;
+    margin-top: -10px;
+    
+}
+footer .contains .title span{
+    color:  var(--maincolor);
+}
+footer .contains .det{
+    font-weight: bold;
+     text-align: center;
+    margin-right: 100px;
+    font-size: 20px;
+}
+/*
+@media (max-width:767px){
+    
+     .section .contains .title{
+        width: 100%;
+    }
+    .section .contains .det{
+         width: 100%;
+    }
+    .section .contains{
+        flex-direction:column;
+        align-items: center;
+    }
+    .exper .contains .det .tool{
+         grid-column: span 12;
+    }
+    
+    .section .contains .title p:first-child{
+        font-size: 30px;
+        margin-bottom:10px;
+    }
+    header .contains .list ::after{
+         content: "";
+        position: absolute;
+        top: -46px;
+        right: 7%;
+        border-style: solid;
+        border-width: 23px;
+        border-color: transparent transparent white transparent;
+    }
+     header .contains .list:hover{
+        display: block;
+    }
+    header .containss .list ul li{
+        float: none;
+        margin-left: 0px;
+        padding: 20px;
+    }
+    header .contains .list ul li:hover{
+        color: white;
+        background-color: var(--mainColor);
+    }
+    
+}
+*/
+
+@media (max-width: 767px){
+    .exper .contains .det .tool{
+        grid-column: span 12;
+    }
+    .exper .contains{
+        margin-right: 0;
+    }
+    header .contains .list{
+        position: absolute;
+        top: 80px;
+        left: 0;
+        background-color: white;
+        width: 100%;
+        display: none; 
+    }
+
+    header .fa-list-ul{
+        display: block;
+        color: hsl(186deg 80% 46%);
+    }
+    
+    .icon:focus + .list{
+        display: block;
+      }
+    header .contains .list ul li{
+        float: none;
+        margin-left: 0px;
+        padding: 20px;
+    } 
+    header .contains .list:hover{
+        display: block;
+    }
+    header .contains .list ul li:hover
+    {
+        background-color:hsl(186deg 80% 46%);
+
+    } 
+    header .contains .list ul li a:hover{
+        color:white;
+     }
+    /* header .contains .list{
+        position: absolute;
+        top: 84px;
+        left: 0;
+        background-color: white;
+        color: black;
+        width: 100%;
+        display: none;
+    } */
+    /* header .contains .list::after{
+        content: "";
+        position: absolute;
+        top: -46px;
+        right: 7%;
+        border-style: solid;
+        border-width: 23px;
+        border-color: transparent transparent white transparent;
+    }
+    header .contains .list:hover{
+        display: block;
+    }
+    header .contains .list ul li{
+        float: none;
+        margin-left: 0px;
+        padding: 20px;
+    } 
+    header .contains .list ul li:hover{
+        color: white;
+        background-color: var(--mainColor);
+    }
+    header .fa-list-ul{
+        display: block;
+        color: white;
+    } */
+    .cover{
+        background-position: right; 
+       
+    }
+    .list li{
+        border-bottom:1px solid turquoise;
+        
+
+    }
+    
+    
+    .section .contains .det,
+    .section .contains .title{
+        width: 100%;
+    }
+    .section .contains .title{
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    
+    .contact .contains .det{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .section .contains{
+          flex-direction: column;
+       
+    }
+    .section .contains .title p{
+       margin-right: 10px;
+        text-align: center;
+    }
+    .exper .contains .title p{
+        margin-right: 40px;
+    }
+    .section .contains .title p:last-child{
+        padding-right: 17px;
+    }
+    .exper .contains .title p:last-child{
+        padding-left: 30px;
+    }
+    .exper .contains .det .tool{
+        grid-column: span 12;
+        text-align: center;
+      
+    }
+    .exper .contains .det{
+        margin-right: 39px;
+    }
+    i{
+        font-size: 20px;
+    }
+    .exper{
+        padding:20px 0;
+        direction: rtl;
+    }
+    .section{
+       width: 100%;
+    }
+    .contact .contains .det{
+        text-align: center;
+        margin-top: 30px
+    }
+    .contact .contains .det div{
+        margin-bottom: 30px;
+    }
+    .works .det .p {
+        height: 150px;
+    }
+    .works .det .big{
+        height: 300px;
+    }
+    footer .contains .det p{
+        
+    margin-top: 1px;
+  margin-right: -101px;
+    font-size: 13px;
+    }
+    footer .contains .title p{
+        margin-left: -30px;
+    }
+    
+}
+
+@media (min-width: 768px) and (max-width: 991px){
+    .experiance .contains .det div{
+        grid-column: span 6;
+    }
+    .cover{
+        background-position: left;
+    }
+}
+
+@media (width: 540px){
+    .section{
+       width: 500px;
+    }
+    .exper{
+        width: 500px;
+        direction: rtl;
+    }
+    .cover{
+        width: 550px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
