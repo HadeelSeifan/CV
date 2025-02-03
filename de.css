@@ -4,20 +4,38 @@
     padding: 0;
     box-sizing: border-box;
 }
+body{
+    font-family: 'Zen Old Mincho', serif;
+}
+.loading-lg{
+    position:fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    width: 100%;
+    height: 100%;
+    background: #fff ;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    animation: fadeout  ease-in 3s ;
+    animation-fill-mode:forwards ;
+    
+}
+
+@keyframes fadeout{
+    100%{
+        opacity: 0;
+        visibility: hidden;
+    }
+}	
 :root{
 /*    تعريف متغير */
-    --maincolor:hsl(186deg 80% 46%);
+    --maincolor:hsl(220, 86%, 51%);
     scroll-behavior: smooth;
 }
-a{
-    text-decoration: none;
-}
-.list a:focus{
-    color: hsl(186deg 80% 46%) ;
-   
-    text-decoration: none;
-    transition: 4s;
-}
+a{text-decoration: none;}.list a:focus{ color: hsl(186deg 80% 46%) ; text-decoration: none;  transition: 4s;}
+
 .top-btn{
     position: fixed;
     bottom: 20px;
@@ -30,24 +48,9 @@ a{
     border-radius: 100%;
    transition: 20s;
 }
-.color{
-   width:20%;
-     transition: 20s;
-    display: none;
-}
-.color span{
-   
-    position: fixed;
-    bottom: 200px;
-    right: 30px;
-    width: 40px;
-    padding: 10px;
-     color: black;
-     border-radius: 100%;
-    text-align: center;
-    
-   
-}
+.color{width:20%; transition: 20s;display: none;}
+.color span{ position: fixed; bottom: 200px; right: 30px; width: 40px; padding: 10px;  color: black;  border-radius: 100%;  text-align: center;}
+
 #deep{
     background-color:lawngreen;
     margin-bottom: 90px;
@@ -59,53 +62,45 @@ a{
 #blue{
     background-color:hsl(186deg 80% 46%) ;
 }
-.contains{
-    
-   
-    width: 80%;
-    margin: auto;
-    
-   
-}
+
 header{
-    
     width: 100%;
     background-color: transparent;
     position: fixed;
      z-index: 5555;
      border-bottom: 1px solid #ddd; 
      padding-top: 20px;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
 }
-header .contains{
+header .container{
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-weight: bold;
 }
-header .contains .logo {
+header .container .logo {
     font-size: 30px;
     color: black;
 }
-header .contains .logo span{
+header .container .logo span{
      font-size: 30px;
     color:var(--maincolor);
 }
-header .contains .list ul{
+header .container .list ul{
     list-style: none;
     
 }
 header .fa-list-ul{
     display: none;
 }
-header .contains .list ul li{
+header .container .list ul li{
     float: left;
     margin-left:30px;
     font-size: 20px;
    
   
 }
-header .contains .list ul li a:hover{
+header .container .list ul li a:hover{
     color:var(--maincolor);
 }
 li a{
@@ -114,24 +109,19 @@ li a{
 
 /*end header*/
 .cover{
-   background-image: url(image/ll.jpg);
+    background: linear-gradient(to top, rgba(178, 136, 232, 0.897) 0%, rgba(124, 174, 240, 0.8) 100%) ,url(image/hh.jpg);;
     background-size: cover;
     background-position:center;
     width: 100%;
     height: 100vh;
-    
-    
 }
-.cover .contains{
+.cover .container{
     position: relative;
     top: 40%;
     left: 0;
 }
 .cover .info{
-    
     position: absolute;
-    
-    
 }
 .cover .info .name{
     font-size: 50px;
@@ -146,88 +136,86 @@ li a{
     padding: 30px 0;
     
 }
-.cover .info ul {
-    list-style: none;
-}
-.cover .info ul li {
-    float: left;
-    margin-left:40px;
-    
-}
-.cover .info ul li i{
-    color:black;
-    margin-top: 10px;
-    font-size: 20px;
-   
-}
-.cover .info ul .u {
+ ul {  list-style: none;}.info ul li { float: left; margin-left:40px; }.info ul li { float: left; margin-left:40px;}ul li i{ color:black; margin-top: 10px; font-size: 20px;}
+ ul .u {
      margin-left:unset;
 }
 /*end cover*/
 .section{
     margin-top: 100px;
+    width: 100%;
 }
-.section .contains{
+.section .container{
     display: flex;
     justify-content: space-between;
 }
-.section .contains .title{
-    width: 20%;
+.intro .title,
+.exper .title,
+.contact .title,
+ footer .title
+{
+    width: 30%;
 }
-.section .contains .title p:first-child{
-    font-size: 30px;
-     color: black;
+.section .title p:first-child{
+    font-size: 40px;
+     color: var(--maincolor);
     font-weight: bold;
     margin-bottom: 10px;
    
 }
-.section .contains .title p:last-child{
-    width: 100%;
-   padding-right: 70px; 
-    
-}
-.exper .contains .title p:last-child{
-    padding-right: 90px;
-}
-/*
-.section .contains .title p:last-child{
-   font-family: 'Nixie One', cursive;
-     
-}
-*/
-.section .contains .title p{
-    margin-right: 90px;
+.section .title p{
+    margin-right: 50px;
     direction: rtl;
     font-weight: bold;
     margin-top: 20px;
 }
-.section .contains .det{
-    width: 80%;
-}
 /*start intro*/
 .intro{
-    width: 100%;
     background-color: white;
     margin-top: 80px;
 }
+.intro .det{
+  margin-top: 80px;
+}
+.intro .det .t{
+display: flex;
+flex-direction: row;
+}
+.intro .det img{
+    width: 80%;
+}
+.hovereffect {
+    width: 60%;
+    height: 200px;
+    float: left;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    cursor: default;
+  }
 .intro .det .s {
-    
+    margin-top: 50px;
+    width: 50%;
     font-family: 'Nixie One', cursive;
 }
-.intro .contains .sks{
-   
+.intro  .sks{
+   width: 60%;
     margin-top: 30px;
 }
-.intro .contains .sks .sk p:first-child span:last-child{
-    float: right;
+.intro  .sks .sk p:first-child span:last-child{
+   float: right;
     
 }
-.intro .contains .sks .sk p:first-child{
-     font-weight: bold;
+.intro  .sks .sk p:first-child{
+     font-weight: 600;
+    
+}
+.intro  .sks .sk p span:first-child{
+    font-size: 20px;
 }
 .sks .sk .col{
-    width: 100%;
-    height: 6px;
+    width: 80%;
+    height: 15px;
     border-radius: 10px;
    
 }
@@ -248,170 +236,217 @@ li a{
 }
 /*end intro*/
 .exper{
-    width: 100%;
     background-color: #ddd;
     padding: 20px 20px;
 }
-.exper .contains .det{
-  
+.exper .container .det{
      display: grid;
      grid-gap: 30px;
     grid-template-columns: repeat(12,1fr);
 }
-.exper .contains .det .tool{
+.exper .container .det .tool{
     grid-column: span 4;
     color: black;
     background-color: white;
     padding: 20px 20px;
    
 }
-.exper .contains .det .tool .p{
+.exper .container .det .tool .p{
     font-size: 30px;
     margin-bottom: 20px;
     margin-top: 20px;
 }
-.exper .contains .det .tool .d {
+.exper .container .det .tool .d {
     font-family: 'Nixie One', cursive;
    
 }
-.exper .contains .det .tool i{
+.exper .container .det .tool i{
    color:var(--maincolor);
-   
     font-size: 25px;
 }
 /*end exper*/
-.works .det{
-    margin: auto;
+.works .title{
+    margin: 10px auto;
 }
-.works .det .big{
-    width: 100%;
-    height:350px;
-    margin-bottom: 10px;
+.works .card-text{
+    font-size: 22px;
+    font-weight:600px;
+    font-family: 'Nixie One', cursive;
 }
-
-.works .det img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-.works .det .p {
-    width: 100%;
-    height:200px;
-    display: flex;
+.works .row{
     justify-content: space-between;
 }
-.works .det .p div{
-     padding-right: 10px;
-
+.card{
+    width: 22rem;
 }
 /*end works*/
-.contact{
-    background-color: #ddd;
-}
-.contact .contains .det{
+ 
+.contact .container .row{
     display: flex;
-    justify-content: space-between;
-    padding: 20px 20px;
-    padding-bottom: 80px;
+    flex-direction: row;
+    padding-bottom: 40px;
+    margin-top: 30px;
 }
-.contact .contains .det p:first-child{
+.contact .container .row p:first-child{
     
     font-size: 20px;
-    margin-bottom: 20px;
     font-weight: bolder;
 }
-.contact .contains .det .o {
+.contact .container .row .o {
+
     color: black;
     background-color: white;
     padding: 20px ;
-    width: 250px;
+  width: 350px;
     text-align: center;
-    height: 150px;
+    
+}
+.contact ul{
+    margin-top: 0;
+}
+.contact ul li{
+    float: left;
+    margin-left: 30px;
 }
 /*end contact*/
 footer{
-    width: 100%;
-     background-color: deeppink;
+     background-color: rgba(184, 137, 247, 0.897);
      text-align: center;
 }
-footer .contains {
+footer .container {
     display: flex;
     justify-content: space-between;
-/*    margin-top: 30px;*/
     height: 76px;
    text-align: center;
     padding: 30px;
 }
-footer .contains .title{
+footer .container .title{
     font-size: 34px;
     font-weight: bold;
      text-align: center;
     margin-top: -10px;
     
 }
-footer .contains .title span{
+footer .container .title span{
     color:  var(--maincolor);
 }
-footer .contains .det{
+footer .container .det{
     font-weight: bold;
      text-align: center;
     margin-right: 100px;
     font-size: 20px;
 }
-/*
-@media (max-width:767px){
-    
-     .section .contains .title{
+
+  .hovereffect .overlay {
+    position: absolute;
+    overflow: hidden;
+    width: 50%;
+    height: 50%;
+    left: 13%;
+    top: 30%;
+    border-bottom: 1px solid #FFF;
+    border-top: 1px solid #FFF;
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+    -webkit-transform: scale(0,1);
+    -ms-transform: scale(0,1);
+    transform: scale(0,1);
+  }
+  
+  .hovereffect:hover .overlay {
+    opacity: 1;
+    filter: alpha(opacity=100);
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+  
+  .hovereffect img {
+    display: block;
+    position: relative;
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
+  }
+  
+  .hovereffect:hover img {
+    filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="linear" slope="0.6" /><feFuncG type="linear" slope="0.6" /><feFuncB type="linear" slope="0.6" /></feComponentTransfer></filter></svg>#filter');
+    filter: brightness(0.6);
+    -webkit-filter: brightness(0.6);
+  }
+  
+  .hovereffect h2 {
+    text-transform: uppercase;
+    text-align: center;
+    position: relative;
+    font-size: 17px;
+    background-color: transparent;
+    color: #FFF;
+    padding: 1em 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+    -webkit-transform: translate3d(0,-100%,0);
+    transform: translate3d(0,-100%,0);
+  }
+  
+  .hovereffect a, .hovereffect p {
+    color: #FFF;
+    padding: 1em 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+    -webkit-transform: translate3d(0,100%,0);
+    transform: translate3d(0,100%,0);
+  }
+  
+  .hovereffect:hover a, .hovereffect:hover p, .hovereffect:hover h2 {
+    opacity: 1;
+    filter: alpha(opacity=100);
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+  }
+  
+@media (max-width: 767px){
+    .works .m1,.works .m2 ,.works .vr{
+        margin-top: 50px;
+    }
+    .card {
         width: 100%;
     }
-    .section .contains .det{
-         width: 100%;
+    .cover .info .w{
+        width: 275px;
+        font-size: 20px;
     }
-    .section .contains{
-        flex-direction:column;
-        align-items: center;
-    }
-    .exper .contains .det .tool{
-         grid-column: span 12;
-    }
-    
-    .section .contains .title p:first-child{
-        font-size: 30px;
-        margin-bottom:10px;
-    }
-    header .contains .list ::after{
-         content: "";
-        position: absolute;
-        top: -46px;
-        right: 7%;
-        border-style: solid;
-        border-width: 23px;
-        border-color: transparent transparent white transparent;
-    }
-     header .contains .list:hover{
-        display: block;
-    }
-    header .containss .list ul li{
-        float: none;
-        margin-left: 0px;
-        padding: 20px;
-    }
-    header .contains .list ul li:hover{
-        color: white;
-        background-color: var(--mainColor);
-    }
-    
-}
-*/
-
-@media (max-width: 767px){
-    .exper .contains .det .tool{
+   
+   
+   
+    .exper .container .det .tool{
         grid-column: span 12;
+        text-align: center;
     }
-    .exper .contains{
+    .exper .container{
         margin-right: 0;
+        margin-left: 0;
     }
-    header .contains .list{
+    .intro .det .t {
+        flex-direction: column;
+    }
+    .intro .det .s{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .hovereffect{
+        width: 100%;
+    }
+    .intro .container .sks{
+        width: 100%;
+    }
+    .intro .det{
+        margin-top: 20px;
+    }
+    header .container .list{
         position: absolute;
         top: 80px;
         left: 0;
@@ -428,105 +463,63 @@ footer .contains .det{
     .icon:focus + .list{
         display: block;
       }
-    header .contains .list ul li{
+    header .list ul li{
         float: none;
         margin-left: 0px;
         padding: 20px;
     } 
-    header .contains .list:hover{
+    header .container .list:hover{
         display: block;
     }
-    header .contains .list ul li:hover
+    header .container .list ul li:hover
     {
         background-color:hsl(186deg 80% 46%);
 
     } 
-    header .contains .list ul li a:hover{
+    header .container .list ul li a:hover{
         color:white;
      }
-    /* header .contains .list{
-        position: absolute;
-        top: 84px;
-        left: 0;
-        background-color: white;
-        color: black;
-        width: 100%;
-        display: none;
-    } */
-    /* header .contains .list::after{
-        content: "";
-        position: absolute;
-        top: -46px;
-        right: 7%;
-        border-style: solid;
-        border-width: 23px;
-        border-color: transparent transparent white transparent;
-    }
-    header .contains .list:hover{
-        display: block;
-    }
-    header .contains .list ul li{
-        float: none;
-        margin-left: 0px;
-        padding: 20px;
-    } 
-    header .contains .list ul li:hover{
-        color: white;
-        background-color: var(--mainColor);
-    }
-    header .fa-list-ul{
-        display: block;
-        color: white;
-    } */
     .cover{
         background-position: right; 
        
     }
     .list li{
         border-bottom:1px solid turquoise;
-        
-
     }
-    
-    
-    .section .contains .det,
-    .section .contains .title{
+    .section .container .det,
+    .section .container .title{
         width: 100%;
     }
-    .section .contains .title{
+    .exper .container .title{
+        margin-right: 20px;
+    }
+    .cover .container{
+        top: 30%;
+    }
+    .intro .det img {
+        width: 100%;
+    }
+    .section .container .title{
         text-align: center;
         margin-bottom: 30px;
     }
     
-    .contact .contains .det{
+    .contact .container .det{
         flex-direction: column;
         align-items: center;
         justify-content: center;
     }
-    .section .contains{
+    .section .container{
           flex-direction: column;
        
     }
-    .section .contains .title p{
-       margin-right: 10px;
+    .section .container .title p{
+       margin-right: 0;
         text-align: center;
     }
-    .exper .contains .title p{
-        margin-right: 40px;
-    }
-    .section .contains .title p:last-child{
-        padding-right: 17px;
-    }
-    .exper .contains .title p:last-child{
-        padding-left: 30px;
-    }
-    .exper .contains .det .tool{
-        grid-column: span 12;
-        text-align: center;
-      
-    }
-    .exper .contains .det{
-        margin-right: 39px;
+    .exper .det{
+        width: 259px;
+        margin: auto;
     }
     i{
         font-size: 20px;
@@ -535,14 +528,12 @@ footer .contains .det{
         padding:20px 0;
         direction: rtl;
     }
-    .section{
-       width: 100%;
-    }
-    .contact .contains .det{
+   
+    .contact .container .det{
         text-align: center;
         margin-top: 30px
     }
-    .contact .contains .det div{
+    .contact .container .det div{
         margin-bottom: 30px;
     }
     .works .det .p {
@@ -551,25 +542,56 @@ footer .contains .det{
     .works .det .big{
         height: 300px;
     }
-    footer .contains .det p{
+    footer .container .det p{
         
     margin-top: 1px;
   margin-right: -101px;
     font-size: 13px;
     }
-    footer .contains .title p{
-        margin-left: -30px;
+    footer .container .title p {
+        margin-left: -16px;
+        font-size: 30px;
     }
+}
+@media (min-width: 1000px) and (max-width: 1100px){
+.works .col-lg-4 {
+        max-width: 34.333333%;
     
 }
-
-@media (min-width: 768px) and (max-width: 991px){
-    .experiance .contains .det div{
-        grid-column: span 6;
+.works .row {
+    
+    justify-content: space-around;
+}
+.card{
+width: 25rem;
+}
+.works .title{
+    width: 20%;
+}
+ .title .ww{
+    margin-right: 0;
+}
+.works .vr{
+    margin-top: 50px;
+}
+}
+@media (min-width: 768px) and (max-width: 1000px){
+    .exper .container .det .tool{
+        grid-column: span 9;
     }
     .cover{
         background-position: left;
     }
+    .works .container .vr{
+        margin-top: 50px;
+    }
+    .intro .title{
+        width: 17%;
+    }
+   
+   .intro .det img {
+         width: 99%;
+        }
 }
 
 @media (width: 540px){
